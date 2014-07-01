@@ -179,4 +179,3 @@ if __name__ == "__main__":
 	agent = FicsAgent(sys.argv[1], sys.argv[2])
 
 	agent.loop()
-# players displayed
