@@ -30,7 +30,7 @@ class Player:
 class Fics:
 	"""A connection to the FICS server"""
 
-	WHO_REGEX=re.compile('([0-9]+)([^0-9])(.+)')
+	WHO_REGEX=re.compile('([0-9]+)([^0-9])(.+)$')
 
 	def __init__(self, user, password):
 		self.connect(user, password)
@@ -72,7 +72,7 @@ class Fics:
 						filter(
 							None, 
 							map(
-								self.WHO_REGEX.fullmatch, 
+								self.WHO_REGEX.match, 
 								playerStrings)))))
 		return players
 
